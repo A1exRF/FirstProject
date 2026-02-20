@@ -1,0 +1,19 @@
+if __name__ == "__main__":
+    import random
+
+    test_data = [random.randint(1, 100) for _ in range(20)]
+    print("Original:", test_data)
+
+    algorithms = [
+        ("Bubble Sort", bubble_sort),
+        ("Selection Sort", selection_sort),
+        ("Insertion Sort", insertion_sort),
+        ("Quick Sort", quick_sort),
+        ("Merge Sort", merge_sort),
+        ("Heap Sort", heap_sort),
+    ]
+
+    for name, func in algorithms:
+        data_copy = test_data.copy()
+        sorted_data = func(data_copy)
+        print(f"{name:15}: {sorted_data}")
